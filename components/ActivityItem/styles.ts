@@ -26,6 +26,7 @@ export default StyleSheet.create({
 
   contentText: {
     color: 'rgba(0,0,0,0.6)',
+    fontSize: 13,
   },
 
   actionsContainer: {

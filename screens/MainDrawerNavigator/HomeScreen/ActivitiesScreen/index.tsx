@@ -18,6 +18,7 @@ import ActivityItem from '../../../../components/ActivityItem';
 import {Activity} from '../../../../types';
 import {copyToClipboard} from '../../../../clipboard';
 import {AppState} from '../../../../store/types';
+import {colors} from '../../../../styles/constants';
 
 const ActivitiesScreen = () => {
   const activities = useSelector((state: AppState) => state.activities);
@@ -164,7 +165,7 @@ const ActivitiesScreen = () => {
           <View style={styles.selectionToolboxActionsContainer}>
             <IconButton
               icon="delete"
-              color={theme.colors.accent}
+              color={colors.dangerColor}
               animated={true}
               size={20}
               onPress={() => {}}

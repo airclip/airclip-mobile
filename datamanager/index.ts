@@ -1,4 +1,5 @@
 import sampleActivities from './sample_activities';
+import sample_devices from './sample_devices';
 import {
   DeviceMap,
   ActivityMap,
@@ -12,7 +13,10 @@ export const fetchLoginSession = async (): Promise<LoginSession | null> => {
 };
 
 export const fetchDevices = async () => {
-  return {} as DeviceMap;
+  return sample_devices.reduce((acc, next) => {
+    acc[next.deviceId] = next;
+    return acc;
+  }, {} as DeviceMap);
 };
 
 export const fetchActivities = async () => {

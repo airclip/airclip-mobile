@@ -1,8 +1,7 @@
 import React from 'react';
-import {Text} from 'react-native-paper';
+import {Text, TouchableRipple} from 'react-native-paper';
 import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ripple from 'react-native-material-ripple';
 import styles from './styles';
 import {colors} from '../../../styles/constants';
 
@@ -18,7 +17,7 @@ const NavigationItem = ({label, icon, isActive, onPress}: Props) => {
   const color = isActive ? colors.primary : 'rgba(0,0,0,0.5)';
 
   return (
-    <Ripple onPress={onPress}>
+    <TouchableRipple onPress={onPress}>
       <View style={[styles.navigationItem, {backgroundColor}]}>
         <Icon name={icon} color={color} style={styles.itemIcon} size={20} />
         <Text
@@ -31,7 +30,7 @@ const NavigationItem = ({label, icon, isActive, onPress}: Props) => {
           {label}
         </Text>
       </View>
-    </Ripple>
+    </TouchableRipple>
   );
 };
 

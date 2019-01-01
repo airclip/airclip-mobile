@@ -14,13 +14,15 @@ export type Device = {
   ownerId: String;
   type: DeviceType;
   name: string;
-  os: string;
+  os: DeviceOS;
   registeredAt: number;
   createdAt: number;
   lastUpdatedAt: number;
 };
 
 export type DeviceType = 'desktop' | 'mobile';
+
+export type DeviceOS = 'android' | 'ios' | 'macos' | 'windows' | 'linux';
 
 export type Activity = {
   activityId: string;

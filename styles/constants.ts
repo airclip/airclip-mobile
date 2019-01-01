@@ -10,4 +10,5 @@ export const colors = {
   accent: '#09f',
   bodyBackgroundColor: '#f2f2f2',
   secondaryTextColor: 'rgba(0,0,0,0.6)',
+  dangerColor: '#ff4d4f',
 };
