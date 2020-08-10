@@ -1,3 +1,3 @@
 # ClipSynk
 
-A MPV for ClipSync.
+A MVP for ClipSync.
