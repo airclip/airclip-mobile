@@ -13,16 +13,9 @@ const Stack = createStackNavigator();
 
 const HomeScreen = () => {
   return (
-    <>
-      <View style={{flex: 1, backgroundColor: 'white'}}>
-        <Text>ss</Text>
-      </View>
-      <StatusBar backgroundColor="red" />
-    </>
-
-    // <SafeAreaView style={{flex: 1, backgroundColor: 'yellow'}} mode="margin">
-
-    // </SafeAreaView>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
+      <Text>ss</Text>
+    </View>
   );
 };
 
