@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.clipsynk"
+        applicationId "io.rousan.clipsynk"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

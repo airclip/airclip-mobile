@@ -1,4 +1,4 @@
-package com.clipsynk;
+package io.rousan.clipsynk;
 
 import com.facebook.react.ReactActivity;
 
