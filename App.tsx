@@ -4,6 +4,7 @@ import {enableScreens} from 'react-native-screens';
 import {StatusBar, View, Platform, ActionSheetIOS} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {
   SafeAreaProvider,
   SafeAreaView,
@@ -35,6 +36,7 @@ import {
 } from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ViewPager from '@react-native-community/viewpager';
 import store from './store';
 
 enableScreens();
@@ -120,6 +122,7 @@ const Foo = () => {
         <Text>Orange</Text>
         <Divider />
       </View>
+      <Icon name="cog-outline" />
       <RadioButton.Android value="first" status={true} onPress={() => {}} />
       <ProgressBar progress={progress / 100} />
       <Button onPress={showDialog}>Show Dialog</Button>
@@ -139,7 +142,18 @@ const Foo = () => {
 };
 
 const Bar = () => {
-  return <Text>Bar</Text>;
+  return (
+    <View style={{flex: 1, borderRadius: 30}}>
+      {/* <ViewPager style={{flex: 1}} initialPage={0}>
+        <View key="1" style={{backgroundColor: 'red'}}>
+          <Text>First page</Text>
+        </View>
+        <View key="2">
+          <Text>Second page</Text>
+        </View>
+      </ViewPager> */}
+    </View>
+  );
 };
 
 const HomeScreen = () => {
@@ -196,11 +210,11 @@ const HomeScreen = () => {
                   color={Colors.white}
                   style={{marginRight: 3}}
                 />
-                <Title style={{color: Colors.white}}>ClipSync</Title>
+                <Title style={{color: Colors.white}}>ClipSynk</Title>
               </View>
             }
           />
-          <Appbar.Action icon="magnify" onPress={() => {}} />
+          <Appbar.Action icon="cog-outline" onPress={() => {}} />
           {Platform.OS === 'ios' ? (
             <Appbar.Action icon={MORE_ICON} onPress={onPressIOS} />
           ) : (
