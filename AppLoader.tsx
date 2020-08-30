@@ -18,27 +18,48 @@ const AppLoaderScreen = () => {
         activities: [],
       };
       setAppState(initialState);
-    }, 0);
+    }, 5000);
   }, []);
 
-  return appState ? (
-    <Provider store={configureStore(appState)}>
-      <App />
-    </Provider>
-  ) : (
-    <View style={styles.appLoaderScreen}>
+  return (
+    <View style={{flex: 1}}>
       <StatusBar
         backgroundColor={colors.bodyBackgroundColor}
         barStyle="dark-content"
       />
-      <View style={styles.loaderContainer}>
-        <Image
-          source={require('./assets/images/logo.png')}
-          style={styles.logo}
-        />
-      </View>
+      {appState ? (
+        <Provider store={configureStore(appState)}>
+          <App />
+        </Provider>
+      ) : (
+        <View style={styles.loaderContainer}>
+          <Image
+            source={require('./assets/images/logo.png')}
+            style={styles.logo}
+          />
+        </View>
+      )}
     </View>
   );
+
+  // return appState ? (
+  //   <Provider store={configureStore(appState)}>
+  //     <App />
+  //   </Provider>
+  // ) : (
+  //   <View style={styles.appLoaderScreen}>
+  //     <StatusBar
+  //       backgroundColor={colors.bodyBackgroundColor}
+  //       barStyle="dark-content"
+  //     />
+  //     <View style={styles.loaderContainer}>
+  //       <Image
+  //         source={require('./assets/images/logo.png')}
+  //         style={styles.logo}
+  //       />
+  //     </View>
+  //   </View>
+  // );
 };
 
 const styles = StyleSheet.create({
