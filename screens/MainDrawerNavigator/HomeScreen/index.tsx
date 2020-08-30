@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ActionSheetIOS, StatusBar, Platform} from 'react-native';
+import {View, ActionSheetIOS, Platform} from 'react-native';
 import {useTheme, Colors, Title, IconButton, Menu} from 'react-native-paper';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -53,10 +53,6 @@ const HomeScreen = ({route, navigation}: Props) => {
           paddingRight: insets.right,
         },
       ]}>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor={theme.colors.primary}
-      />
       <View
         style={[
           styles.appbar,
@@ -107,7 +103,7 @@ const HomeScreen = ({route, navigation}: Props) => {
         <Tab.Navigator
           tabBarOptions={{
             activeTintColor: 'rgba(255,255,255,1)',
-            inactiveTintColor: 'rgba(255,255,255,0.4)',
+            inactiveTintColor: 'rgba(255,255,255,0.6)',
             style: {
               backgroundColor: theme.colors.primary,
               elevation: 4,
