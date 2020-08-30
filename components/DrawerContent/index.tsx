@@ -12,13 +12,32 @@ import baseStyles from '../../styles';
 import {colors} from '../../styles/constants';
 import NavigationItem from './NavigationItem';
 
-const mainRoutes = [
+type RouteInfo = {
+  name: string;
+  label?: string;
+  icon: string;
+};
+
+const mainRoutes: RouteInfo[] = [
   {
     name: 'Home',
     icon: 'home',
   },
   {
+    name: 'UserProfile',
+    label: 'My Account',
+    icon: 'account',
+  },
+  {
+    name: 'Settings',
+    icon: 'cog',
+  },
+];
+
+const footerRoutes: RouteInfo[] = [
+  {
     name: 'Feedback',
+    label: 'Feedback/Suggestions',
     icon: 'lightbulb-on',
   },
   {
@@ -27,18 +46,15 @@ const mainRoutes = [
   },
 ];
 
-const footerRoutes = [
-  {
-    name: 'Settings',
-    icon: 'cog',
-  },
-];
-
 const DrawerContent = ({
   navigation,
   state,
 }: DrawerContentComponentProps<DrawerContentOptions>) => {
   const currentRouteName = state.routeNames[state.index];
+
+  const onPressRateUs = () => {
+    // @todo: Add logic here,
+  };
 
   return (
     <SafeAreaView style={baseStyles.container}>
@@ -55,9 +71,9 @@ const DrawerContent = ({
               style={styles.avatar}
             />
           </Ripple>
-          <Title style={styles.name}>Sandra Adams</Title>
+          <Title style={styles.name}>Rousan Ali</Title>
           <Text style={[styles.email, {color: colors.secondaryTextColor}]}>
-            sandra_a88@gmail.com
+            rousanali786@gmail.com
           </Text>
         </View>
         <Divider />
@@ -66,7 +82,7 @@ const DrawerContent = ({
             {mainRoutes.map((route) => (
               <NavigationItem
                 key={route.name}
-                label={route.name}
+                label={route.label || route.name}
                 icon={route.icon}
                 isActive={route.name === currentRouteName}
                 onPress={() => navigation.navigate(route.name)}
@@ -78,12 +94,19 @@ const DrawerContent = ({
             {footerRoutes.map((route) => (
               <NavigationItem
                 key={route.name}
-                label={route.name}
+                label={route.label || route.name}
                 icon={route.icon}
                 isActive={route.name === currentRouteName}
                 onPress={() => navigation.navigate(route.name)}
               />
             ))}
+            <NavigationItem
+              key="Rate Us"
+              label="Rate Us"
+              icon="star"
+              isActive={false}
+              onPress={onPressRateUs}
+            />
           </View>
         </View>
       </View>
