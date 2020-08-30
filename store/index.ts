@@ -1,8 +1,14 @@
-import {createStore, combineReducers} from 'redux';
+import {createStore, Store} from 'redux';
 import reducer from './reducer';
+import {AppState, Action} from './types';
 
-const rootReducer = combineReducers({state1: reducer});
+let store: Store<AppState, Action> | undefined;
 
-export type AppState = ReturnType<typeof rootReducer>;
-const store = createStore(rootReducer);
-export default store;
+export const configureStore = (initialState: AppState) => {
+  store = createStore(reducer, initialState);
+  return store;
+};
+
+export const getStore = () => {
+  return store;
+};

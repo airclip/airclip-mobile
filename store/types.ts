@@ -1,7 +1,18 @@
+import {User, Device, Activity} from '../types';
+
+export type AppState = {
+  session: LoginSession | null;
+  devices: Device[];
+  activities: Activity[];
+};
+
+export type LoginSession = {
+  token: string;
+  user: User;
+  device: Device;
+};
+
 export type Action = {
   type: string;
   payload: any;
 };
-
-export const DO_SOMETHING = 'DO_SOMETHING';
-export const DO_SOMETHING2 = 'DO_SOMETHING2';

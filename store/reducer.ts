@@ -1,21 +1,23 @@
-import {Map} from 'immutable';
-import {Action, DO_SOMETHING} from './types';
+import {Action, AppState} from './types';
+import {UPDATE_SESSION, UPDATE_ACTIVITIES, UPDATE_DEVICES} from './constants';
 
-const initialState = {
-  counter: 0,
-  counter2: 'ss',
+const initialState: AppState = {
+  session: null,
+  devices: [],
+  activities: [],
 };
 
-export default function reducer(
-  state = initialState,
-  action: Action,
-): typeof initialState {
+export default (state = initialState, action: Action): AppState => {
   const {type, payload} = action;
 
   switch (type) {
-    case DO_SOMETHING:
-      return {...state, counter: payload};
+    case UPDATE_SESSION:
+      return {...state, session: payload.session};
+    case UPDATE_DEVICES:
+      return {...state, devices: payload.devices};
+    case UPDATE_ACTIVITIES:
+      return {...state, activities: payload.activities};
     default:
       return state;
   }
-}
+};

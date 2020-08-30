@@ -1,11 +1,12 @@
 {
   "name": "ClipSynk",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "android:release": "react-native run-android --variant=release",
     "ios": "react-native run-ios",
+    "ios:release": "react-native run-ios --variant=release",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -16,8 +17,6 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
-    "@react-native-community/viewpager": "^4.1.6",
-    "@react-navigation/bottom-tabs": "^5.8.0",
     "@react-navigation/drawer": "^5.9.0",
     "@react-navigation/material-top-tabs": "^5.2.16",
     "@react-navigation/native": "^5.7.3",
@@ -25,7 +24,6 @@
     "@types/react-native-vector-icons": "^6.4.5",
     "@types/react-redux": "^7.1.9",
     "@types/redux": "^3.6.0",
-    "immutable": "^4.0.0-rc.12",
     "react": "16.13.1",
     "react-native": "0.63.2",
     "react-native-gesture-handler": "^1.7.0",
