@@ -18,7 +18,7 @@ const AppLoaderScreen = () => {
         activities: [],
       };
       setAppState(initialState);
-    }, 2000);
+    }, 0);
   }, []);
 
   return appState ? (

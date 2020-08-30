@@ -10,4 +10,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  logo: {
+    width: 60,
+    height: 60,
+  },
 });

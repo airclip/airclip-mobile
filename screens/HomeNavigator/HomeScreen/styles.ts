@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import baseStyles from '../../../styles';
 
 export default StyleSheet.create({
-  homeScreen: {
+  home: {
     ...baseStyles.centeredContainer,
     backgroundColor: 'red',
   },
