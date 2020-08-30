@@ -7,8 +7,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {AppState} from './store/types';
 import {colors} from './styles/constants';
 import baseStyles from './styles';
-import AuthNavigator from './screens/AuthNavigator';
-import HomeNavigator from './screens/HomeNavigator';
+import AuthStackNavigator from './screens/AuthStackNavigator';
+import MainDrawerNavigator from './screens/MainDrawerNavigator';
 
 const theme = {
   ...DefaultTheme,
@@ -27,7 +27,7 @@ const App = () => {
       <SafeAreaProvider>
         <NavigationContainer>
           <View style={styles.root}>
-            {!session ? <AuthNavigator /> : <HomeNavigator />}
+            {!session ? <AuthStackNavigator /> : <MainDrawerNavigator />}
           </View>
         </NavigationContainer>
       </SafeAreaProvider>

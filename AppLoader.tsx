@@ -13,7 +13,7 @@ const AppLoaderScreen = () => {
   useEffect(() => {
     setTimeout(() => {
       const initialState: AppState = {
-        session: null,
+        session: {}, // @todo: Provide appropriate value.
         devices: [],
         activities: [],
       };

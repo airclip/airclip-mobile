@@ -9,13 +9,13 @@ import baseStyles from '../../styles';
 
 const Stack = createStackNavigator();
 
-const AuthNavigator = () => (
+const AuthStackNavigator = () => (
   <View style={baseStyles.container}>
     <StatusBar
       backgroundColor={colors.bodyBackgroundColor}
       barStyle="dark-content"
     />
-    <Stack.Navigator headerMode="none">
+    <Stack.Navigator headerMode="none" initialRouteName="Login">
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Signup" component={SignupScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
@@ -23,4 +23,4 @@ const AuthNavigator = () => (
   </View>
 );
 
-export default AuthNavigator;
+export default AuthStackNavigator;
