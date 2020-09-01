@@ -4,7 +4,6 @@ import {useTheme, Colors, Title, IconButton, Menu} from 'react-native-paper';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import styles from './styles';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import baseStyles from '../../../styles';
 import ActivitiesScreen from './ActivitiesScreen';
 import DevicesScreen from './DevicesScreen';
@@ -24,9 +23,15 @@ const HomeScreen = ({route, navigation}: Props) => {
     setVisibleOptionsMenuAndroid,
   ] = React.useState(false);
 
-  const onClickHelpOption = () => {};
+  const onClickHelpOption = () => {
+    navigation.navigate('Help');
+  };
 
-  const onClickRateUsOption = () => {};
+  const onClickRateUsOption = () => {
+    // Use: https://github.com/KjellConnelly/react-native-rate
+    // or
+    // https://github.com/pankod/react-native-store-rating
+  };
 
   const onPressOptionsMenuIOS = () => {
     ActionSheetIOS.showActionSheetWithOptions(

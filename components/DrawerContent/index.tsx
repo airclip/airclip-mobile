@@ -37,11 +37,12 @@ const mainRoutes: RouteInfo[] = [
 const footerRoutes: RouteInfo[] = [
   {
     name: 'Feedback',
-    label: 'Feedback/Suggestions',
+    label: 'Feedback & Suggestions',
     icon: 'lightbulb-on',
   },
   {
     name: 'Help',
+    label: 'Help & Support',
     icon: 'help',
   },
 ];
