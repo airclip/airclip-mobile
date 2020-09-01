@@ -1,13 +1,17 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {Text} from 'react-native-paper';
-import baseStyles from '../../../styles';
+import BaseSimpleScreen from '../../BaseSimpleScreen';
 
 const FeedbackScreen = () => {
   return (
-    <View style={baseStyles.centeredContainer}>
-      <Text>FeedbackScreen</Text>
-    </View>
+    <BaseSimpleScreen title="FeedbackScreen">
+      <ScrollView>
+        <View>
+          <Text>FeedbackScreen</Text>
+        </View>
+      </ScrollView>
+    </BaseSimpleScreen>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, Avatar, Title, Divider} from 'react-native-paper';
-import {View} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {
   DrawerContentComponentProps,
   DrawerContentOptions,
@@ -24,7 +24,7 @@ const mainRoutes: RouteInfo[] = [
     icon: 'home',
   },
   {
-    name: 'UserProfile',
+    name: 'Account',
     label: 'My Account',
     icon: 'account',
   },
@@ -63,7 +63,7 @@ const DrawerContent = ({
           <Ripple
             rippleCentered
             rippleSize={80}
-            onPress={() => navigation.navigate('UserProfile')}
+            onPress={() => navigation.navigate('Account')}
             style={styles.avatarContainer}>
             <Avatar.Image
               size={45}
@@ -79,15 +79,17 @@ const DrawerContent = ({
         <Divider />
         <View style={styles.routesList}>
           <View style={styles.mainRootList}>
-            {mainRoutes.map((route) => (
-              <NavigationItem
-                key={route.name}
-                label={route.label || route.name}
-                icon={route.icon}
-                isActive={route.name === currentRouteName}
-                onPress={() => navigation.navigate(route.name)}
-              />
-            ))}
+            <ScrollView>
+              {mainRoutes.map((route) => (
+                <NavigationItem
+                  key={route.name}
+                  label={route.label || route.name}
+                  icon={route.icon}
+                  isActive={route.name === currentRouteName}
+                  onPress={() => navigation.navigate(route.name)}
+                />
+              ))}
+            </ScrollView>
           </View>
           <Divider />
           <View style={styles.footerRootList}>

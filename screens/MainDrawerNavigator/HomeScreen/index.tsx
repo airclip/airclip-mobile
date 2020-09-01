@@ -4,6 +4,7 @@ import {useTheme, Colors, Title, IconButton, Menu} from 'react-native-paper';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import styles from './styles';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import baseStyles from '../../../styles';
 import ActivitiesScreen from './ActivitiesScreen';
 import DevicesScreen from './DevicesScreen';
@@ -101,6 +102,7 @@ const HomeScreen = ({route, navigation}: Props) => {
       </View>
       <View style={baseStyles.container}>
         <Tab.Navigator
+          initialRouteName="Activities"
           tabBarOptions={{
             activeTintColor: 'rgba(255,255,255,1)',
             inactiveTintColor: 'rgba(255,255,255,0.6)',
@@ -117,7 +119,13 @@ const HomeScreen = ({route, navigation}: Props) => {
             },
             indicatorStyle: {backgroundColor: theme.colors.primary},
           }}>
-          <Tab.Screen name="Activities" component={ActivitiesScreen} />
+          <Tab.Screen
+            name="Activities"
+            component={ActivitiesScreen}
+            options={{
+              tabBarLabel: 'History',
+            }}
+          />
           <Tab.Screen name="Devices" component={DevicesScreen} />
         </Tab.Navigator>
       </View>

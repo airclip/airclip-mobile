@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
+import baseStyles from '../../styles';
 
 export default StyleSheet.create({
-  contentContainer: {
-    padding: 10,
+  content: {
+    ...baseStyles.container,
   },
 });

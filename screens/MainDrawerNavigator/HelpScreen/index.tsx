@@ -1,13 +1,17 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {Text} from 'react-native-paper';
-import baseStyles from '../../../styles';
+import BaseSimpleScreen from '../../BaseSimpleScreen';
 
 const HelpScreen = () => {
   return (
-    <View style={baseStyles.centeredContainer}>
-      <Text>HelpScreen</Text>
-    </View>
+    <BaseSimpleScreen title="HelpScreen">
+      <ScrollView>
+        <View>
+          <Text>HelpScreen</Text>
+        </View>
+      </ScrollView>
+    </BaseSimpleScreen>
   );
 };
 

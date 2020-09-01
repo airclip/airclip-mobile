@@ -24,10 +24,12 @@ export type DeviceType = 'desktop' | 'mobile';
 
 export type Activity = {
   activityId: string;
-  ownerId: String;
-  fromDeviceId: string;
-  toDeviceId: string;
+  type: ActivityType;
+  targetDeviceId: string;
+  content: string;
   happenedAt: number;
   createdAt: number;
   lastUpdatedAt: number;
 };
+
+export type ActivityType = 'incoming' | 'outgoing';

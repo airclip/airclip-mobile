@@ -4,7 +4,7 @@ import {View, StatusBar} from 'react-native';
 import HomeScreen from './HomeScreen';
 import SettingsScreen from './SettingsScreen';
 import FeedbackScreen from './FeedbackScreen';
-import UserProfileScreen from './UserProfileScreen';
+import AccountStackNavigator from './AccountStackNavigator';
 import HelpScreen from './HelpScreen';
 import DrawerContent from '../../components/DrawerContent';
 import baseStyles from '../../styles';
@@ -20,7 +20,7 @@ const MainDrawerNavigator = () => (
       drawerContent={(props) => <DrawerContent {...props} />}>
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Settings" component={SettingsScreen} />
-      <Drawer.Screen name="UserProfile" component={UserProfileScreen} />
+      <Drawer.Screen name="Account" component={AccountStackNavigator} />
       <Drawer.Screen name="Feedback" component={FeedbackScreen} />
       <Drawer.Screen name="Help" component={HelpScreen} />
     </Drawer.Navigator>
