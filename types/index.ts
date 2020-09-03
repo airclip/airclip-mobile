@@ -48,3 +48,5 @@ export type LoginSession = {
   user: User;
   device: Device;
 };
+
+export type SyncDirection = 'incoming' | 'outgoing';

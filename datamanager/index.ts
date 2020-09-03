@@ -1,5 +1,11 @@
 import sampleActivities from './sample_activities';
-import {DeviceMap, ActivityMap, Settings, LoginSession} from '../types';
+import {
+  DeviceMap,
+  ActivityMap,
+  Settings,
+  LoginSession,
+  SyncDirection,
+} from '../types';
 
 export const fetchLoginSession = async (): Promise<LoginSession | null> => {
   return {} as LoginSession;
@@ -16,8 +22,15 @@ export const fetchActivities = async () => {
   }, {} as ActivityMap);
 };
 
+export const removeActivities = async (_activityIds: string[]) => {};
+
+export const clearAllActivities = async () => {};
+
 export const fetchSettings = async (): Promise<Settings> => {
   return {incomingSyncEnabled: true, outgoingSyncEnabled: true};
 };
 
-export const removeActivities = async (_activityIds: string[]) => {};
+export const updateSyncStatus = async (
+  _direction: SyncDirection,
+  _status: boolean,
+) => {};
