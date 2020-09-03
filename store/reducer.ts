@@ -3,8 +3,8 @@ import {UPDATE_SESSION, UPDATE_ACTIVITIES, UPDATE_DEVICES} from './constants';
 
 const initialState: AppState = {
   session: null,
-  devices: [],
-  activities: [],
+  devices: {},
+  activities: {},
   settings: {
     incomingSyncEnabled: true,
     outgoingSyncEnabled: true,

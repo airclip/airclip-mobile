@@ -34,7 +34,17 @@ export type Activity = {
 
 export type ActivityType = 'incoming' | 'outgoing';
 
+export type DeviceMap = {[deviceID: string]: Device};
+
+export type ActivityMap = {[activityId: string]: Activity};
+
 export type Settings = {
   incomingSyncEnabled: boolean;
   outgoingSyncEnabled: boolean;
+};
+
+export type LoginSession = {
+  token: string;
+  user: User;
+  device: Device;
 };

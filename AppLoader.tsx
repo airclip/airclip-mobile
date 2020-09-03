@@ -1,152 +1,44 @@
 import React, {useEffect, useState} from 'react';
-import {View, StyleSheet, StatusBar, Image} from 'react-native';
+import {View, StyleSheet, StatusBar, Image, Text} from 'react-native';
 import {Provider} from 'react-redux';
 import baseStyles from './styles';
 import {colors} from './styles/constants';
 import App from './App';
 import {configureStore} from './store';
 import {AppState} from './store/types';
-import {Activity} from './types';
-
-// Fetch it from database with "happenedAt" order.
-const activities: Activity[] = [
-  {
-    activityId: '1',
-    type: 'incoming',
-    targetDeviceId: '2',
-    content: "Hey, What's up?",
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '2',
-    type: 'outgoing',
-    targetDeviceId: '1',
-    content: 'https://callstack.github.io/react-native-paper/text-input.html',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '3',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content: 'https://source.android.com/setup/start/build-numbers',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '4',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content:
-      'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '5',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content:
-      'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '6',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content:
-      'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '7',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content:
-      'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '8',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content:
-      'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '9',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content:
-      'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '10',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content:
-      'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '11',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content:
-      'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-  {
-    activityId: '12',
-    type: 'incoming',
-    targetDeviceId: '1',
-    content: 'heyyyyyyy',
-    happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
-  },
-];
+import {
+  fetchLoginSession,
+  fetchDevices,
+  fetchActivities,
+  fetchSettings,
+} from './datamanager';
 
 const AppLoaderScreen = () => {
   const [appState, setAppState] = useState<AppState | null>(null);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    setTimeout(() => {
+    const fetchInitialState = async () => {
       const initialState: AppState = {
-        session: {}, // @todo: Provide appropriate value.
-        devices: [],
-        activities: activities,
-        settings: {
-          incomingSyncEnabled: true,
-          outgoingSyncEnabled: true,
-        },
+        session: await fetchLoginSession(),
+        devices: await fetchDevices(),
+        activities: await fetchActivities(),
+        settings: await fetchSettings(),
       };
-      setAppState(initialState);
-    }, 0);
+
+      return initialState;
+    };
+
+    fetchInitialState()
+      .then((initialState) => {
+        setAppState(initialState);
+      })
+      .catch((err) => {
+        setError(new Error(err.message || String(err)));
+      });
   }, []);
 
-  return appState ? (
+  return !error && appState ? (
     <Provider store={configureStore(appState)}>
       <App />
     </Provider>
@@ -162,6 +54,11 @@ const AppLoaderScreen = () => {
           style={styles.logo}
         />
       </View>
+      {error ? (
+        <View>
+          <Text>{error?.message}</Text>
+        </View>
+      ) : null}
     </View>
   );
 };

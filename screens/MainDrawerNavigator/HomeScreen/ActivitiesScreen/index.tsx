@@ -65,7 +65,7 @@ const ActivitiesScreen = () => {
     let newSelectedItems: Set<string>;
 
     if (selectAll) {
-      newSelectedItems = new Set(activities.map((item) => item.activityId));
+      newSelectedItems = new Set(Object.keys(activities));
     } else {
       newSelectedItems = new Set();
     }
@@ -166,7 +166,7 @@ const ActivitiesScreen = () => {
       <FlatList
         style={styles.itemsList}
         ItemSeparatorComponent={ActivityItem.Separator}
-        data={activities}
+        data={Object.values(activities)}
         renderItem={renderItem}
         keyExtractor={(item) => item.activityId}
         extraData={selectedItems}

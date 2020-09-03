@@ -1,16 +1,10 @@
-import {User, Device, Activity, Settings} from '../types';
+import {Settings, DeviceMap, ActivityMap, LoginSession} from '../types';
 
 export type AppState = {
   session: LoginSession | null;
-  devices: Device[];
-  activities: Activity[];
+  devices: DeviceMap;
+  activities: ActivityMap;
   settings: Settings;
-};
-
-export type LoginSession = {
-  token: string;
-  user: User;
-  device: Device;
 };
 
 export type Action = {
