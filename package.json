@@ -16,6 +16,7 @@
     "release:android": "cd android && ./gradlew bundleRelease && cd .."
   },
   "dependencies": {
+    "@react-native-community/clipboard": "^1.2.3",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/drawer": "^5.9.0",
     "@react-navigation/material-top-tabs": "^5.2.16",
@@ -25,6 +26,7 @@
     "@types/react-native-vector-icons": "^6.4.5",
     "@types/react-redux": "^7.1.9",
     "@types/redux": "^3.6.0",
+    "moment": "^2.27.0",
     "react": "16.13.1",
     "react-native": "0.63.2",
     "react-native-gesture-handler": "^1.7.0",

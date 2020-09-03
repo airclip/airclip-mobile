@@ -122,7 +122,8 @@ const HomeScreen = ({route, navigation}: Props) => {
               shadowOpacity: 0.24,
               shadowRadius: 4,
             },
-            indicatorStyle: {backgroundColor: theme.colors.primary},
+            // indicatorStyle: {backgroundColor: theme.colors.primary},
+            indicatorStyle: {backgroundColor: 'white'},
           }}>
           <Tab.Screen
             name="Activities"

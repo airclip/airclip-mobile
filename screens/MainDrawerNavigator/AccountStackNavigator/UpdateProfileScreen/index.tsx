@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {View, Keyboard, Pressable, Image} from 'react-native';
-import {Appbar, TextInput, HelperText, Button} from 'react-native-paper';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import React, {useState} from 'react';
+import {View, Keyboard, Pressable} from 'react-native';
+import {TextInput, HelperText, Button} from 'react-native-paper';
 import styles from './styles';
 import baseStyles from '../../../../styles';
 import {validateEmail} from '../../../../utils';
@@ -20,7 +19,6 @@ const UpdateProfileScreen = ({route, navigation}: Props) => {
     error: '',
   });
   const [loading, setLoading] = useState(false);
-  const insets = useSafeAreaInsets();
 
   const onChangeFullName = (text: string) => {
     setFullName({

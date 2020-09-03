@@ -1,6 +1,5 @@
 import React from 'react';
 import {Text} from 'react-native-paper';
-import styles from './styles';
 
 type Props = {
   text: string;
