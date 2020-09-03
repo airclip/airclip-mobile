@@ -19,3 +19,5 @@ export const fetchActivities = async () => {
 export const fetchSettings = async (): Promise<Settings> => {
   return {incomingSyncEnabled: true, outgoingSyncEnabled: true};
 };
+
+export const removeActivities = async (_activityIds: string[]) => {};
