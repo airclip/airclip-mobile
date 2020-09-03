@@ -144,7 +144,7 @@ const ActivitiesScreen = () => {
             <View style={styles.selectionToolboxCountContainer}>
               <Text
                 style={[
-                  styles.selectionToolboxCountContainer,
+                  styles.selectionToolboxCountText,
                   {color: theme.colors.accent},
                 ]}>
                 {selectedItems.size}

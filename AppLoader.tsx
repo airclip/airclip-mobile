@@ -8,6 +8,7 @@ import {configureStore} from './store';
 import {AppState} from './store/types';
 import {Activity} from './types';
 
+// Fetch it from database with "happenedAt" order.
 const activities: Activity[] = [
   {
     activityId: '1',
@@ -136,6 +137,10 @@ const AppLoaderScreen = () => {
         session: {}, // @todo: Provide appropriate value.
         devices: [],
         activities: activities,
+        settings: {
+          incomingSyncEnabled: true,
+          outgoingSyncEnabled: true,
+        },
       };
       setAppState(initialState);
     }, 0);

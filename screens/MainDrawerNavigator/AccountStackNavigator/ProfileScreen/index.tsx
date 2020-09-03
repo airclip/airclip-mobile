@@ -17,6 +17,7 @@ const ProfileScreen = ({route, navigation}: Props) => {
 
   const onPressLogout = () => {
     // Show a confirmation modal and logout.
+    // Also, show a warning dialog that It will clear all your clipboard history for this device. [NEED TO THINK WHETHER TO DELETE HISTORY OR NOT.]
   };
 
   return (

@@ -5,6 +5,10 @@ const initialState: AppState = {
   session: null,
   devices: [],
   activities: [],
+  settings: {
+    incomingSyncEnabled: true,
+    outgoingSyncEnabled: true,
+  },
 };
 
 export default (state = initialState, action: Action): AppState => {

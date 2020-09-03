@@ -1,9 +1,10 @@
-import {User, Device, Activity} from '../types';
+import {User, Device, Activity, Settings} from '../types';
 
 export type AppState = {
   session: LoginSession | null;
   devices: Device[];
   activities: Activity[];
+  settings: Settings;
 };
 
 export type LoginSession = {

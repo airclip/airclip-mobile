@@ -33,3 +33,8 @@ export type Activity = {
 };
 
 export type ActivityType = 'incoming' | 'outgoing';
+
+export type Settings = {
+  incomingSyncEnabled: boolean;
+  outgoingSyncEnabled: boolean;
+};
