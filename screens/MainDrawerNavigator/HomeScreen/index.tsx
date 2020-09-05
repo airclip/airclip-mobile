@@ -107,7 +107,8 @@ const HomeScreen = ({route, navigation}: Props) => {
       </View>
       <View style={baseStyles.container}>
         <Tab.Navigator
-          initialRouteName="Activities"
+          // initialRouteName="Activities"
+          initialRouteName="Devices"
           tabBarOptions={{
             activeTintColor: 'rgba(255,255,255,1)',
             inactiveTintColor: 'rgba(255,255,255,0.6)',

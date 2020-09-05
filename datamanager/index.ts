@@ -22,7 +22,7 @@ export const fetchActivities = async () => {
   }, {} as ActivityMap);
 };
 
-export const removeActivities = async (_activityIds: string[]) => {};
+export const clearActivities = async (_activityIds: string[]) => {};
 
 export const clearAllActivities = async () => {};
 

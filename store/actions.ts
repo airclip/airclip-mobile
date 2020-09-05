@@ -9,7 +9,7 @@ import {ActivityMap, DeviceMap, LoginSession, Settings} from '../types';
 import {
   fetchActivities,
   fetchDevices,
-  removeActivities,
+  clearActivities,
   fetchSettings,
   updateSyncStatus,
   clearAllActivities,
@@ -31,12 +31,12 @@ export const updateActivities = (activities: ActivityMap): Action => ({
 
 export const deleteActivities = (activityIds: string[]) => {
   return async (dispatch: any) => {
-    await removeActivities(activityIds);
+    await clearActivities(activityIds);
     dispatch(refreshActivities());
   };
 };
 
-export const deleteAllActivities = (activityIds: string[]) => {
+export const deleteAllActivities = () => {
   return async (dispatch: any) => {
     await clearAllActivities();
     dispatch(refreshActivities());

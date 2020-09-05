@@ -28,8 +28,17 @@ const ActivitiesScreen = () => {
     content: '',
     visible: false,
   });
+  const [refreshing, setRefreshing] = useState(false);
 
   const theme = useTheme();
+
+  const onRefresh = () => {
+    console.log('onRefresh');
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 5000);
+  };
 
   const toggleSelectionItem = (id: string) => {
     const newSelectedItems = new Set(selectedItems);
@@ -170,6 +179,8 @@ const ActivitiesScreen = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.activityId}
         extraData={selectedItems}
+        onRefresh={onRefresh}
+        refreshing={refreshing}
       />
       <Portal>
         <Dialog
