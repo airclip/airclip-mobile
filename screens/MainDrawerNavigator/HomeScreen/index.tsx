@@ -107,8 +107,7 @@ const HomeScreen = ({route, navigation}: Props) => {
       </View>
       <View style={baseStyles.container}>
         <Tab.Navigator
-          // initialRouteName="Activities"
-          initialRouteName="Devices"
+          initialRouteName="Activities"
           tabBarOptions={{
             activeTintColor: 'rgba(255,255,255,1)',
             inactiveTintColor: 'rgba(255,255,255,0.6)',
@@ -123,7 +122,6 @@ const HomeScreen = ({route, navigation}: Props) => {
               shadowOpacity: 0.24,
               shadowRadius: 4,
             },
-            // indicatorStyle: {backgroundColor: theme.colors.primary},
             indicatorStyle: {backgroundColor: 'white'},
           }}>
           <Tab.Screen
