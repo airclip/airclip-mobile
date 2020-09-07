@@ -1,11 +1,18 @@
 import {Action} from './types';
 import {
-  UPDATE_ACTIVITIES,
-  UPDATE_DEVICES,
   UPDATE_SESSION,
+  UPDATE_DEVICES,
+  UPDATE_DEVICES_STATUS,
+  UPDATE_ACTIVITIES,
   UPDATE_SETTINGS,
 } from './constants';
-import {ActivityMap, DeviceMap, LoginSession, Settings} from '../types';
+import {
+  ActivityMap,
+  DeviceMap,
+  LoginSession,
+  Settings,
+  DevicesStatus,
+} from '../types';
 import {
   fetchActivities,
   fetchDevices,
@@ -53,6 +60,13 @@ export const updateDevices = (devices: DeviceMap): Action => ({
   type: UPDATE_DEVICES,
   payload: {
     devices,
+  },
+});
+
+export const updateDevicesStatus = (devicesStatus: DevicesStatus): Action => ({
+  type: UPDATE_DEVICES_STATUS,
+  payload: {
+    devicesStatus,
   },
 });
 

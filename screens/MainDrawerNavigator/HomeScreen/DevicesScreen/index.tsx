@@ -8,8 +8,11 @@ import {Device} from '../../../../types';
 
 const DevicesScreen = () => {
   const devices = useSelector((state: AppState) => state.devices);
+  const devicesStatus = useSelector((state: AppState) => state.devicesStatus);
   const [refreshing, setRefreshing] = useState(false);
 
+  // 1. Pull devices list from server and update local database and update redux state.
+  // 2. Pull devices status from server and update redux state.
   const onRefresh = () => {
     console.log('onRefresh');
     setRefreshing(true);
@@ -30,6 +33,7 @@ const DevicesScreen = () => {
     return (
       <DeviceItem
         device={item}
+        status={devicesStatus[item.deviceId]}
         onPress={onPressItem}
         onDelete={onDeleteDevice}
       />
@@ -44,6 +48,7 @@ const DevicesScreen = () => {
         keyExtractor={(item) => item.deviceId}
         onRefresh={onRefresh}
         refreshing={refreshing}
+        extraData={devicesStatus}
       />
     </View>
   );

@@ -6,17 +6,24 @@ import {
   Settings,
   LoginSession,
   SyncDirection,
+  DevicesStatus,
 } from '../types';
 
 export const fetchLoginSession = async (): Promise<LoginSession | null> => {
   return {} as LoginSession;
 };
 
+// Read from local database, and the local database will be updated when connecting to websocket server.
 export const fetchDevices = async () => {
   return sample_devices.reduce((acc, next) => {
     acc[next.deviceId] = next;
     return acc;
   }, {} as DeviceMap);
+};
+
+export const fetchDevicesStatus = async () => {
+  // Fetch from server.
+  return {} as DevicesStatus;
 };
 
 export const fetchActivities = async () => {

@@ -24,6 +24,7 @@ const AppLoaderScreen = () => {
         devices: await fetchDevices(),
         activities: await fetchActivities(),
         settings: await fetchSettings(),
+        devicesStatus: {}, // It will be updated asynchronously.
       };
 
       return initialState;

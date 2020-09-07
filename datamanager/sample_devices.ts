@@ -8,8 +8,6 @@ const devices: Device[] = [
     name: 'Macbook Pro',
     os: 'macos',
     registeredAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     deviceId: '2',
@@ -18,8 +16,6 @@ const devices: Device[] = [
     name: 'Windows 10',
     os: 'windows',
     registeredAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     deviceId: '3',
@@ -28,8 +24,6 @@ const devices: Device[] = [
     name: 'Ubuntu',
     os: 'linux',
     registeredAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     deviceId: '4',
@@ -38,8 +32,6 @@ const devices: Device[] = [
     name: 'iPhone 10',
     os: 'ios',
     registeredAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     deviceId: '5',
@@ -48,8 +40,6 @@ const devices: Device[] = [
     name: 'OnePlus',
     os: 'android',
     registeredAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
 ];
 

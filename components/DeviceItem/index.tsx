@@ -10,21 +10,23 @@ import {
   Dialog,
   Paragraph,
   Button,
+  Badge,
 } from 'react-native-paper';
 import Snackbar from 'react-native-snackbar';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Device} from '../../types';
+import {Device, DeviceStatus} from '../../types';
 import styles from './styles';
 import {colors} from '../../styles/constants';
 import {deviceOsInfo} from '../../constants';
 
 type Props = {
   device: Device;
+  status: DeviceStatus | undefined;
   onPress: (device: Device) => void;
   onDelete: (device: Device) => Promise<void>;
 };
 
-const DeviceItem = ({device, onPress, onDelete}: Props) => {
+const DeviceItem = ({device, status, onPress, onDelete}: Props) => {
   const [deleteDialogState, setDeleteDialogState] = useState({
     loading: false,
     visible: false,
@@ -60,6 +62,9 @@ const DeviceItem = ({device, onPress, onDelete}: Props) => {
   // @todo: Update this logic.
   const isThisCurrentDevice = device.deviceId === '2';
 
+  const isOnline = status && status.isOnline;
+  const badgeBackgroundColor = isOnline ? 'green' : 'rgba(0,0,0,0.3)';
+
   return (
     <Surface style={styles.contentContainer}>
       <View style={styles.contentWrapper}>
@@ -74,6 +79,16 @@ const DeviceItem = ({device, onPress, onDelete}: Props) => {
                 {isThisCurrentDevice ? (
                   <Text style={styles.deviceNameCurrent}>(current)</Text>
                 ) : null}
+                <Badge
+                  visible={true}
+                  size={9}
+                  style={[
+                    {
+                      backgroundColor: badgeBackgroundColor,
+                    },
+                    styles.onlineStatusBadge,
+                  ]}
+                />
               </View>
               <Text style={styles.osName}>{osInfo.label}</Text>
             </View>

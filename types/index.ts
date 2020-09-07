@@ -5,8 +5,6 @@ export type User = {
   email: string;
   countryCode: string;
   joinedAt: number;
-  createdAt: number;
-  lastUpdatedAt: number;
 };
 
 export type Device = {
@@ -16,13 +14,21 @@ export type Device = {
   name: string;
   os: DeviceOS;
   registeredAt: number;
-  createdAt: number;
-  lastUpdatedAt: number;
 };
 
 export type DeviceType = 'desktop' | 'mobile';
 
 export type DeviceOS = 'android' | 'ios' | 'macos' | 'windows' | 'linux';
+
+export type DeviceMap = {[deviceID: string]: Device};
+
+export type DevicesStatus = {
+  [deviceId: string]: DeviceStatus | undefined;
+};
+
+export type DeviceStatus = {
+  isOnline: boolean;
+};
 
 export type Activity = {
   activityId: string;
@@ -30,13 +36,9 @@ export type Activity = {
   targetDeviceId: string;
   content: string;
   happenedAt: number;
-  createdAt: number;
-  lastUpdatedAt: number;
 };
 
 export type ActivityType = 'incoming' | 'outgoing';
-
-export type DeviceMap = {[deviceID: string]: Device};
 
 export type ActivityMap = {[activityId: string]: Activity};
 

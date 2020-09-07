@@ -52,4 +52,10 @@ export default StyleSheet.create({
     color: 'rgba(0,0,0,0.6)',
     fontSize: 10,
   },
+
+  onlineStatusBadge: {
+    margin: 0,
+    marginLeft: 5,
+    marginBottom: 3,
+  },
 });

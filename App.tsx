@@ -1,5 +1,5 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {View, StyleSheet} from 'react-native';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
@@ -9,6 +9,8 @@ import {colors} from './styles/constants';
 import baseStyles from './styles';
 import AuthStackNavigator from './screens/AuthStackNavigator';
 import MainDrawerNavigator from './screens/MainDrawerNavigator';
+import {fetchDevicesStatus} from './datamanager';
+import {updateDevicesStatus} from './store/actions';
 
 const theme = {
   ...DefaultTheme,
@@ -21,6 +23,17 @@ const theme = {
 
 const App = () => {
   const session = useSelector((state: AppState) => state.session);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchDevicesStatus()
+      .then((devicesStatus) => {
+        dispatch(updateDevicesStatus(devicesStatus));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [dispatch]);
 
   return (
     <PaperProvider theme={theme}>

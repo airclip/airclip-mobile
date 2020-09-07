@@ -7,8 +7,6 @@ const activities: Activity[] = [
     targetDeviceId: '2',
     content: "Hey, What's up?",
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '2',
@@ -16,8 +14,6 @@ const activities: Activity[] = [
     targetDeviceId: '1',
     content: 'https://callstack.github.io/react-native-paper/text-input.html',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '3',
@@ -25,8 +21,6 @@ const activities: Activity[] = [
     targetDeviceId: '1',
     content: 'https://source.android.com/setup/start/build-numbers',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '4',
@@ -35,8 +29,6 @@ const activities: Activity[] = [
     content:
       'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '5',
@@ -45,8 +37,6 @@ const activities: Activity[] = [
     content:
       'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '6',
@@ -55,8 +45,6 @@ const activities: Activity[] = [
     content:
       'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '7',
@@ -65,8 +53,6 @@ const activities: Activity[] = [
     content:
       'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '8',
@@ -75,8 +61,6 @@ const activities: Activity[] = [
     content:
       'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '9',
@@ -85,8 +69,6 @@ const activities: Activity[] = [
     content:
       'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '10',
@@ -95,8 +77,6 @@ const activities: Activity[] = [
     content:
       'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '11',
@@ -105,8 +85,6 @@ const activities: Activity[] = [
     content:
       'Platform codenames, versions, API levels, and NDK releases. The codenames correspond to the following version numbers, API levels, and NDK releases.',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
   {
     activityId: '12',
@@ -114,8 +92,6 @@ const activities: Activity[] = [
     targetDeviceId: '1',
     content: 'heyyyyyyy',
     happenedAt: Date.now(),
-    createdAt: Date.now(),
-    lastUpdatedAt: Date.now(),
   },
 ];
 
