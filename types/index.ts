@@ -9,7 +9,7 @@ export type User = {
 
 export type Device = {
   deviceId: string;
-  ownerId: String;
+  ownerId: string;
   type: DeviceType;
   name: string;
   os: DeviceOS;

@@ -1,5 +1,5 @@
 import sampleActivities from './sample_activities';
-import sample_devices from './sample_devices';
+import sampleDevices from './sample_devices';
 import {
   DeviceMap,
   ActivityMap,
@@ -15,7 +15,7 @@ export const fetchLoginSession = async (): Promise<LoginSession | null> => {
 
 // Read from local database, and the local database will be updated when connecting to websocket server.
 export const fetchDevices = async () => {
-  return sample_devices.reduce((acc, next) => {
+  return sampleDevices.reduce((acc, next) => {
     acc[next.deviceId] = next;
     return acc;
   }, {} as DeviceMap);

@@ -20,7 +20,8 @@ const AppLoaderScreen = () => {
   useEffect(() => {
     const fetchInitialState = async () => {
       const initialState: AppState = {
-        session: await fetchLoginSession(),
+        // session: await fetchLoginSession(),
+        session: null,
         devices: await fetchDevices(),
         activities: await fetchActivities(),
         settings: await fetchSettings(),
